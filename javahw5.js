@@ -30,3 +30,30 @@ $( document ).ready(function() {
         row.append(col3);
 
 
+
+
+
+        var timeOfday = ["9", "10", "11", "12", "13", "14", "15", "16", "17"]
+    updatetime();
+    
+    function updatetime() {
+      var currentTime = moment().format('H');
+      for(var i = 0; i < timeOfday.length; i++) {
+    
+        if (parseInt(timeOfday[i]) > currentTime) {
+          $("#" + timeOfday[i]).attr("style", "background-color: #58ce7b");
+    
+    
+        }
+        else if (parseInt(timeOfday[i]) < currentTime) {
+          $("#" + timeOfday[i]).attr("style", "background-color: lightgray");
+    
+        }
+        else if (parseInt(timeOfday[i]) == currentTime) {
+          $("#" + timeOfday[i]).attr("style", "background-color: #fc665e");
+        
+        }
+      }
+    }
+
+
