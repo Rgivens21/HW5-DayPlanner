@@ -17,20 +17,23 @@ $( document ).ready(function() {
         var row = $(`<div data-time=${i} id='${i}' class="row">`);
 
         // hour column
-        var col1 = $('<div class="col-sm-2"> <p class="hour">' + amPm(i) + '</p>');
+        var columnOne = $('<p class="hour">' + amPm(i) + '</p>');
 
         //event column
-        var col2 = $(`<div class="col-sm-8 past"><textarea id=text${i} class="event" placeholder="Scheduled Events..."></textarea>`);        
+        var columnTwo = $(`<textarea id=text${i} class="event" placeholder="Scheduled Events..."></textarea>`);        
        
         //save column
-        var col3 = $(`<div class="col-sm-2"><button class="saveBtn" id=${i}><i class="fas fa-save"></i></button>`)
+        var columnThree = $(`<button class="saveBtn" id=${i}></button>`)
         
-        row.append(col1);
-        row.append(col2);
-        row.append(col3);
+        row.append(columnOne);
+        row.append(coumnTwo);
+        row.append(columnThree);
+        $(".container").append(row);
 
 
 
+
+        
 
 
         var timeOfday = ["9", "10", "11", "12", "13", "14", "15", "16", "17"]
